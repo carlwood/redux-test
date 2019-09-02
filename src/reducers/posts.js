@@ -1,6 +1,7 @@
 const postsReducer = (state = [], action) => {
     switch (action.type) {
       case 'INCREMENT_POST_LIKES':
+        console.log(state, action);
         const i = action.index
         // return the updated statet
         console.log('increment post likes at ', action);

@@ -8,14 +8,15 @@ const PostSingle = ({ pathname, posts, increment }) => {
         // index of the post
     const index = posts.findIndex((post) => post.slug === slug)
     const post = posts[index];
-    console.log(index);
+
     return (
-        <div>
+        <article>
             <h1>{post.title}</h1>
             <p>
-                <button onClick={ (index) => increment(index)}>❤️</button> {post.likes} likes
+                <button onClick={ () => increment(index)}>❤️</button> {post.likes} likes
             </p>
-        </div>
+            {post.body}
+        </article>
     )
 }
 
@@ -30,8 +31,8 @@ const mapStateToProps = state => ({
     posts: state.posts,
 })
 
-const mapDispatchToProps = dispatch => ({
-    increment: () => dispatch(increment()),
+const mapDispatchToProps = (dispatch) => ({
+    increment: (index) => dispatch(increment(index)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostSingle)
