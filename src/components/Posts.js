@@ -4,22 +4,24 @@ import { connect } from 'react-redux'
 import { increment } from '../actions/posts'
 import { Link } from 'react-router-dom'
 
-const Posts = (props) => (
-  <div>
-    {props.posts.map((post, i) => {
-        return (
+const Posts = ({posts}) => {
+  return(
+    <div>
+      {posts.map((post, i) => {
+          return (
             <div key={i} i={i}>
-                <h2>
-                    <Link to={`/posts/${post.slug}`} post={post}>{post.title}</Link>
-                </h2>
-                <p>
-                    <button>❤️</button> {post.likes} likes
-                </p>
+              <h2>
+                <Link to={`/blog/${post.slug}`} post={post}>{post.title}</Link>
+              </h2>
+              <p>
+                  <button>❤️</button> {post.likes} likes
+              </p>
             </div>
-        )
-    })}
-  </div>
-)
+          )
+      })}
+    </div>
+  )
+}
 
 Posts.propTypes = {
     posts: PropTypes.array,

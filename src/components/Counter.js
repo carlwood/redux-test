@@ -5,9 +5,10 @@ import { increment, decrement } from '../actions/counter'
 
 const Counter = (props) => (
   <div>
-    Counter: {props.count}
-    <button onClick={props.increment}>+</button>
+    Counter:
     <button onClick={props.decrement}>-</button>
+    {props.count}
+    <button onClick={props.increment}>+</button>
   </div>
 )
 

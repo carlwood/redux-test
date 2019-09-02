@@ -13,8 +13,8 @@ const routes = (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/counter" component={Counter} />
-      <Route exact path="/posts" component={Posts} />
-      <Route path="/posts/:slug" component={PostSingle} />
+      <Route exact path="/blog" component={Posts} />
+      <Route path="/blog/:slug" component={PostSingle} />
       <Route component={NoMatch} />
     </Switch>
   </div>

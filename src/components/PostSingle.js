@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { increment } from '../actions/posts'
 
 const PostSingle = ({ pathname, posts, increment }) => {
-    const slug = pathname.replace('/posts/', '');
+    const slug = pathname.replace('/blog/', '');
         // index of the post
     const index = posts.findIndex((post) => post.slug === slug)
     const post = posts[index];
